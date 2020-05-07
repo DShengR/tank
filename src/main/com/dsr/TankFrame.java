@@ -10,6 +10,7 @@ import static com.dsr.Dire.*;
 
 public class TankFrame extends Frame {
     Tank tank=new Tank(200,300,DOWN);
+    Bullet bullet=new Bullet(300,400,tank.getDire());
     public TankFrame(){
         setSize(400,500);
         setTitle("Tank");
@@ -24,7 +25,8 @@ public class TankFrame extends Frame {
     }
     @Override
     public void paint(Graphics g){
-        tank.move(g);
+        tank.paint(g);
+        bullet.paint(g);
     }
     class TankKeyListener extends KeyAdapter {
         boolean bu=false;
@@ -47,6 +49,9 @@ public class TankFrame extends Frame {
                     break;
                 case KeyEvent.VK_RIGHT:
                     br=true;
+                    break;
+                case KeyEvent.VK_SPACE:
+
                     break;
                 default:
                     break;

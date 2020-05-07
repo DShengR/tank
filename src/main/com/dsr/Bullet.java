@@ -2,29 +2,26 @@ package com.dsr;
 
 import java.awt.*;
 
-import static com.dsr.Dire.UP;
-
-public class Tank {
+/**
+ * Created by duansr on 2020/5/7.
+ */
+public class Bullet {
     private int x,y;
-    private Dire dire= UP;
+    private Dire dire;
+    private int width=10,height=10;
     private static final int SPEED=10;
 
-    public Tank(int x, int y, Dire dire) {
+    public Bullet(int x, int y,Dire dire) {
         this.x = x;
         this.y = y;
-        this.dire = dire;
-    }
-
-    public Dire getDire() {
-        return dire;
-    }
-
-    public void setDire(Dire dire) {
-        this.dire = dire;
+        this.dire=dire;
     }
     public void paint(Graphics g){
-        g.fillRect(x,y,30,30);
+        Color c=g.getColor();
+        g.setColor(Color.RED);
         move();
+        g.fillOval(x,y,width,height);
+        g.setColor(c);
     }
     public void move(){
         switch (dire){
