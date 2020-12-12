@@ -44,4 +44,8 @@ public class Bullet {
     public void toStrigzm(){
         System.out.println("zm.toString()");
     }
+    public String toString(){
+        return "zm add";
+    }
+
 }
