@@ -41,4 +41,7 @@ public class Bullet {
                 break;
         }
     }
+    public void toStrig(){
+        System.out.println("dshengr.toString()");
+    }
 }
